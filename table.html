@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>This is a test</title>
+
+<script src="list.min.js"> </script>
+
+<style type="text/css" media="screen">
+
+.gage-search {
+   font-size:1em;
+}
+
+.dis {
+   font-size:1.2em;
+   width:400px;
+   margin:5px;
+   float:left;
+}
+
+.item img {
+   margin:7px;
+
+}
+
+.item {
+   border-bottom:solid lightgrey 2px;
+   padding:0.1em; 
+}
+
+
+.left {
+   float:left;
+}
+
+.lang {
+   background-color:lightgreen;
+   padding:2px 8px;
+   margin:5px;
+}
+
+.ver {
+   background-color:lightblue;
+   padding:2px 8px;
+   margin:5px;
+}
+
+.list li {
+   list-style:none;
+}
+</style>
+
+</head>
+<body>
+
+<div id="example-list">
+   <h1 id="global_file_list">Global File List</h1>
+
+   <span>Filter <input placeholder="Language, version, etc..." type="text" class="gage-search"> </span>
+
+   <ul class="list">
+      <li>
+      <div class="item">
+	 <a href="#"> <img class="left" alt="pdf" src="pdf-icon.png" /> <p class="dis">21 New Enrollment Form</p></a>
+	 <a href="#" class="lang left">english</a>
+	 <a href="#" class="ver left">v0.1</a>
+	 <select name="cars">
+	    <option value="volvo">This is one</option>
+	    <option value="saab">Saab</option>
+	    <option value="fiat">Fiat</option>
+	    <option value="audi">Audi</option>
+	 </select>
+	 <br style="clear:both;"/>
+      </div>
+      </li>
+   </ul>
+
+
+</div>
+<script type="text/javascript" charset="utf-8">
+
+var gagesSearch = function() {
+
+   var entry = [
+   {
+      'dis':'我們的使命 This is another one',
+	 'lang':'Chinese',
+	 'ver': 'v2.0'
+   },
+   {
+      'dis':'Another One',
+      'lang':'C++',
+      'ver': 'v2.1'
+   }
+   ];
+
+
+
+   var options = {
+valueNames: [ 'dis', 'lang', 'ver'],
+	    searchClass: "gage-search" 
+   };
+
+   var globalFiles = new List('example-list', options);
+
+   globalFiles.add({
+	 'dis':'I\'m New',
+	 'lang':'Japan, Spanish, English',
+	 'ver': 'v0.1'
+	 });
+
+   for (var i = 0; i < entry.length; i++ ){
+      globalFiles.add(entry[i]);
+   }
+
+}
+
+gagesSearch();
+
+
+
+</script>
+</body>
+</html>
